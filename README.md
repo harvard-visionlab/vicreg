@@ -1,3 +1,5 @@
+# forked from facebookresearch/vicreg
+
 # VICReg: Variance-Invariance-Covariance Regularization For Self-Supervised Learning
 
 This repository provides a PyTorch implementation and pretrained models for VICReg, as described in the paper [VICReg: Variance-Invariance-Covariance Regularization For Self-Supervised Learning](https://arxiv.org/abs/2105.04906)\
