@@ -1,4 +1,4 @@
-# forked from facebookresearch/vicreg
+# forked from [facebookresearch/vicreg](https://github.com/facebookresearch/vicreg)
 
 # VICReg: Variance-Invariance-Covariance Regularization For Self-Supervised Learning
 
