@@ -108,10 +108,11 @@ def resnet50_vicreg(pretrained=True, model_dir=None, **kwargs):
     model = VICRegExtractor(arch='resnet50', mlp='8192-8192-8192')
     
     if pretrained: 
-        state_dict = torch.hub.load_state_dict_from_url(
+        checkpoint = torch.hub.load_state_dict_from_url(
             url="https://visionlab-pretrainedmodels.s3.amazonaws.com/model_zoo/vicreg/resnet50_vicreg_fullckpt_weights_only.pth",
             map_location="cpu",
         )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = "6cc22efa80"
     
@@ -123,10 +124,11 @@ def resnet50x2_vicreg(pretrained=True, model_dir=None, **kwargs):
     model = VICRegExtractor(arch='resnet50x2', mlp='8192-8192-8192')
     
     if pretrained: 
-        state_dict = torch.hub.load_state_dict_from_url(
+        checkpoint = torch.hub.load_state_dict_from_url(
             url="https://visionlab-pretrainedmodels.s3.amazonaws.com/model_zoo/vicreg/resnet50x2_vicreg_fullckpt_weights_only.pth",
             map_location="cpu",
         )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = '6716990428'
      
@@ -138,10 +140,11 @@ def resnet200x2_vicreg(pretrained=True, model_dir=None, **kwargs):
     model = VICRegExtractor(arch='resnet200x2', mlp='8192-8192-8192')
     
     if pretrained: 
-        state_dict = torch.hub.load_state_dict_from_url(
+        checkpoint = torch.hub.load_state_dict_from_url(
             url="https://visionlab-pretrainedmodels.s3.amazonaws.com/model_zoo/vicreg/resnet200x2_vicreg_fullckpt_weights_only.pth",
             map_location="cpu",
         )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = '9c58a5871c'
     
