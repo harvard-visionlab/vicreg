@@ -25,7 +25,7 @@ def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229
     
     return transform
 
-class VICRegExtractor(nn.Module):
+class VICRegExtractor(torch.nn.Module):
     def __init__(self, arch='resnet50', mlp='8192-8192-8192'):
         super().__init__()
 
