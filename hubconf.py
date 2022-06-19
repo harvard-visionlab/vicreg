@@ -63,7 +63,7 @@ def resnet50_vicreg_backbone(pretrained=True, **kwargs):
     return model, transform
 
 
-def resnet50w2_vicreg_backbone(pretrained=True, **kwargs):
+def resnet50x2_vicreg_backbone(pretrained=True, **kwargs):
     model, _ = resnet.resnet50x2(**kwargs)
     if pretrained:
         state_dict = torch.hub.load_state_dict_from_url(
@@ -80,7 +80,7 @@ def resnet50w2_vicreg_backbone(pretrained=True, **kwargs):
     return model, transform
 
 
-def resnet200w2_vicreg_backbone(pretrained=True, **kwargs):
+def resnet200x2_vicreg_backbone(pretrained=True, **kwargs):
     model, _ = resnet.resnet200x2(**kwargs)
     if pretrained:
         state_dict = torch.hub.load_state_dict_from_url(
