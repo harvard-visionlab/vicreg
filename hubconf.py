@@ -12,8 +12,8 @@
 import torch
 import torchvision
 import resnet
-from types import SimpleNamespace
-from main_vicreg import Projector
+from types import SimpleNamespace as _SimpleNamespace
+from main_vicreg import Projector as _Projector
 
 dependencies = ["torch", "torchvision"]
 
@@ -35,7 +35,7 @@ class VICRegExtractor(torch.nn.Module):
         self.backbone, self.embedding = resnet.__dict__[arch](
             zero_init_residual=True
         )
-        self.projector = Projector(SimpleNamespace(mlp=mlp), self.embedding)
+        self.projector = _Projector(_SimpleNamespace(mlp=mlp), self.embedding)
 
     def forward(self, x, y=None):
         x = self.projector(self.backbone(x))
