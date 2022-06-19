@@ -14,10 +14,6 @@ import resnet
 
 dependencies = ["torch", "torchvision"]
 
-_weight_urls = {
-    "resnet50_vicreg_backbone": 
-}
-
 def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     transform = torchvision.transforms.Compose([
         transforms.Resize(resize),
