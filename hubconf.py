@@ -10,16 +10,17 @@
 
 
 import torch
+import torchvision
 import resnet
 
 dependencies = ["torch", "torchvision"]
 
 def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]):
     transform = torchvision.transforms.Compose([
-        transforms.Resize(resize),
-        transforms.CenterCrop(crop_size),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=mean, std=std)    
+        torchvision.transforms.Resize(resize),
+        torchvision.transforms.CenterCrop(crop_size),
+        torchvision.transforms.ToTensor(),
+        torchvision.transforms.Normalize(mean=mean, std=std)    
     ])
     
     return transform
