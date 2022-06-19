@@ -8,7 +8,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
-
+import os
 import torch
 import torchvision
 import resnet
@@ -57,6 +57,7 @@ def resnet50_vicreg_backbone(pretrained=True, **kwargs):
         )
         model.load_state_dict(state_dict, strict=True)
         model.hashid = 'c843e76524'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", "resnet50-c843e76524.pth")
         
     transform = _transform()
     
@@ -74,6 +75,7 @@ def resnet50x2_vicreg_backbone(pretrained=True, **kwargs):
         )
         model.load_state_dict(state_dict, strict=True)
         model.hashid = "65af82c4ad"
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", "resnet50x2-65af82c4ad.pth")
         
     transform = _transform()
     
@@ -91,6 +93,7 @@ def resnet200x2_vicreg_backbone(pretrained=True, **kwargs):
         )
         model.load_state_dict(state_dict, strict=True)
         model.hashid = "b8eeaf14f5"
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", "resnet200x2-b8eeaf14f5.pth")
         
     transform = _transform()
     
@@ -115,7 +118,8 @@ def resnet50_vicreg(pretrained=True, model_dir=None, **kwargs):
         state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = "6cc22efa80"
-    
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", "resnet50_vicreg_fullckpt_weights_only.pth")
+        
     transform = _transform()
     
     return model, transform
@@ -131,7 +135,8 @@ def resnet50x2_vicreg(pretrained=True, model_dir=None, **kwargs):
         state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = '6716990428'
-     
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", "resnet50x2_vicreg_fullckpt_weights_only.pth")
+        
     transform = _transform()
     
     return model, transform
@@ -147,7 +152,8 @@ def resnet200x2_vicreg(pretrained=True, model_dir=None, **kwargs):
         state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
         model.load_state_dict(state_dict, strict=True)
         model.hashid = '9c58a5871c'
-    
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", "resnet200x2_vicreg_fullckpt_weights_only.pth")
+        
     transform = _transform()
     
     return model, transform
