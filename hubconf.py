@@ -12,6 +12,7 @@
 import torch
 import torchvision
 import resnet
+from main_vicreg import Projector
 
 dependencies = ["torch", "torchvision"]
 
