@@ -1,3 +1,7 @@
+'''
+    modified from original to include required image transforms,
+    and to enable loading the full checkpoints.
+'''
 # Copyright (c) Meta Platforms, Inc. and affiliates.
 # All rights reserved.
 
